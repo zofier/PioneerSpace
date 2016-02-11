@@ -7,23 +7,24 @@
           .user-name_image.row
             .user-name.col-md-10
               =f.text_field :username, type: "text", placeholder: "Username", value: current_user.username
-            .user-image.col-md-2{:style => "background-image: url(#{current_user.avatar.url});"}
-              %button.btn.btn-primary Change image
-              = f.file_field :avatar, type: "file", value: current_user.avatar
-          = f.email_field :email, placeholder: "E-Mail", type: "email", value: current_user.email
-          = f.password_field :password, type: "password", placeholder: "Password"
+          .user-image.col-md-2
+            %button.btn.btn-primary Add image
+            = f.file_field :avatar, type: "file", value: current_user.avatar
+          .user-email
+            = f.email_field :email, placeholder: "E-Mail", type: "email", value: current_user.email
+            = f.password_field :password, type: "password", placeholder: "Password"
         .col-md-12
           %h4 Group
           .user-user-member.row
             .user-name.col-md-12
-              = f.text_field :group, placeholder: "Input Group", type: "text", value: current_user.group
+              = f.text_area :group, placeholder: "Input Group", type: "text", value: current_user.group
           %h4 Profile
           .user-user-profile.row
             .user-name.col-md-12
-              = f.text_field :profile, cols: "30", placeholder: "Input Profile", rows: "4", value: current_user.profile
+              = f.text_area :profile, cols: "30", placeholder: "Input Profile", rows: "4", value: current_user.profile
           %h4 Works
           .user-name_image.row
             .user-name.col-md-12
-              = f.text_field :work, cols: "30", rows: "4", placeholder: "Input Works", value: current_user.work
+              = f.text_area :work, cols: "30", rows: "4", placeholder: "Input Works", value: current_user.work
       .row.text-center.user-btn
         = f.submit "Save", class: "btn btn-lg btn-primary btn-block"
