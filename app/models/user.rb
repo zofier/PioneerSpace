@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :username, :avatar, :email, :group, :profile, :work
+  validates_presence_of :username, :avatar, :group, :profile, :work
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :avatar, AvatarUploader
 end
