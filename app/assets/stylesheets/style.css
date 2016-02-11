@@ -1,0 +1,9 @@
+div > .navbar-nav > li > .navbar-btn {
+  color: #fff;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+div > .navbar-nav > li > .navbar-btn:hover {
+  color: #fff;
+}
