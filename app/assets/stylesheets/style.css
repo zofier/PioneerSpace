@@ -7,3 +7,12 @@ div > .navbar-nav > li > .navbar-btn {
 div > .navbar-nav > li > .navbar-btn:hover {
   color: #fff;
 }
+
+div > div > #user_username {
+  width: 80%;
+}
+
+header > div > div > div > .user-image {
+  float: right;
+}
+
