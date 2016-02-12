@@ -1,6 +1,4 @@
 $(function() {
-  $('input[type=file]').after('<span></span>');
-
   // アップロードするファイルを選択
   $('input[type=file]').change(function() {
     var file = $(this).prop('files')[0];

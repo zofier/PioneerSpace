@@ -1,30 +1,32 @@
 .container.user-new
-  = form_for current_user, :url => {:controller => 'users', :action => 'update'} do |f|
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
           %h2 Edit Profile
           .user-name_image.row
             .user-name.col-md-10
-              =f.text_field :username, type: "text", placeholder: "Username", value: current_user.username
+              =f.text_field :username, placeholder: "Username", value: current_user.username
               .user-image.col-md-2
                 %button.btn.btn-primary Add image
                 = f.file_field :avatar, value: current_user.avatar
           .user-email
-            = f.email_field :email, placeholder: "E-Mail", type: "email", value: current_user.email
-            = f.password_field :password, type: "password", placeholder: "Password"
+            = f.email_field :email, placeholder: "E-Mail", value: current_user.email
+            = f.password_field :password, placeholder: "Password"
+            = f.password_field :current_password, placeholder: "Current password"
         .col-md-12
           %h4 Group
           .user-user-member.row
             .user-name.col-md-12
-              = f.text_area :group, placeholder: "Input Group", type: "text", value: current_user.group
+              = f.text_field :group, placeholder: "Group", value: current_user.group
           %h4 Profile
           .user-user-profile.row
             .user-name.col-md-12
-              = f.text_area :profile, cols: "30", placeholder: "Input Profile", rows: "4", value: current_user.profile
+              = f.text_area :profile, cols: "30", placeholder: "Profile", rows: "4", value: current_user.profile
           %h4 Works
           .user-name_image.row
             .user-name.col-md-12
-              = f.text_area :work, cols: "30", rows: "4", placeholder: "Input Works", value: current_user.work
+              = f.text_field :work, placeholder: "Works", value: current_user.work
       .row.text-center.user-btn
         = f.submit "Save", class: "btn btn-lg btn-primary btn-block"

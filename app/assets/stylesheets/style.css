@@ -1,18 +1,18 @@
-div > .navbar-nav > li > .navbar-btn {
+.navbar-btn {
   color: #fff;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
-div > .navbar-nav > li > .navbar-btn:hover {
+.navbar-btn:hover {
   color: #fff;
 }
 
-div > div > #user_username {
+#user_username {
   width: 80%;
 }
 
-header > div > div > div > .user-image {
+.user-image {
   float: right;
   background-repeat: no-repeat;
   background-position: center center;

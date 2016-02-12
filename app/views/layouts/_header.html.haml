@@ -25,7 +25,7 @@
               %li
                 %a{:href => "#"} My page
               %li
-                = link_to "Profile Edit", edit_user_path(current_user)
+                = link_to "Profile Edit", edit_user_registration_path(current_user)
               %li
                 = link_to "Logout", destroy_user_session_path, method: :delete
             %li
