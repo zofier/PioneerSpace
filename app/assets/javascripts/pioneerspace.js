@@ -7,14 +7,14 @@ $(function() {
     if (! file.type.match('image.*')) {
       // クリア
       $(this).val('');
-      $('div.user-image').html('');
+      $('.user-image').html('');
       return;
     }
 
     // 画像表示
     var reader = new FileReader();
     reader.onload = function() {
-      $('div.user-image').css("background-image" , "url(" + reader.result + ")" );
+      $('.user-image').css("background-image" , "url(" + reader.result + ")" );
     }
     reader.readAsDataURL(file);
   });
