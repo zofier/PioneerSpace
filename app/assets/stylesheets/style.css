@@ -14,5 +14,6 @@ div > div > #user_username {
 
 header > div > div > div > .user-image {
   float: right;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-

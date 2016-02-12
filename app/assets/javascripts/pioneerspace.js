@@ -16,8 +16,7 @@ $(function() {
     // 画像表示
     var reader = new FileReader();
     reader.onload = function() {
-      var img_src = $('<img style="position: absolute; top: 0; border-radius: 50%; left: 0; width: 100%; height: 100%;">').attr('src', reader.result);
-      $('div.user-image').css('background-image', 'url()').html(img_src);
+      $('div.user-image').css("background-image" , "url(" + reader.result + ")" );
     }
     reader.readAsDataURL(file);
   });
