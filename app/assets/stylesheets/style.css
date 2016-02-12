@@ -1,0 +1,19 @@
+.navbar-btn {
+  color: #fff;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.navbar-btn:hover {
+  color: #fff;
+}
+
+#user_username {
+  width: 80%;
+}
+
+.user-image {
+  float: right;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
