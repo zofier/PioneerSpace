@@ -1,0 +1,37 @@
+.jumbotron
+  .container.text-center
+    = image_tag("header_logo.png", :alt => "PROTO TYPE - SHARE THE PROTOTYPE", :height => "73px")
+
+.filter-nav
+  .container
+    .row
+      %ul.nav.nav-pills.col-lg-11
+        %li.active{:role => "presentation"}
+          %a{:href => "#"} Popular PROTO
+        %li{:role => "presentation"}
+          %a{:href => "#"} Newest PROTO
+      %button{:type => "button", :class => "btn btn-default col-lg-1"} View Tags
+
+.container.proto-list
+  .row
+    - @pioneertypes.each do |pioneertype|
+      .col-sm-4.col-md-3.proto-content
+        .thumbnail
+          = link_to pioneertype_path(pioneertype) do
+            = image_tag("#{pioneertype.pioneertype_images.main[0].image}")
+          .caption
+            %h3
+              = link_to "#{pioneertype.title}", pioneertype_path(pioneertype)
+          .proto-meta
+            .proto-user
+              = link_to "by #{pioneertype.user.username}", user_path(pioneertype.user)
+            .proto-posted
+              = pioneertype.created_at.strftime('%b %d')
+          %ul.proto-tag-list.list-inline
+            %li
+              %a{:href => "#", :class => "btn btn-default"} iPad
+            %li
+              %a{:href => "#", :class => "btn btn-default"} wireframe
+
+  .text-center
+    = paginate(@pioneertypes)
