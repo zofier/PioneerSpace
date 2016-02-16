@@ -4,7 +4,7 @@
       %header.row.user-nav.row
         .col-md-12
           .proto-new-title
-            = f.text_field :title, placeholder: "Title"
+            = f.text_field :title, placeholder: "Title", required: true
       .row
         .col-md-12
           .cover-image-upload
@@ -28,9 +28,9 @@
                 %span +
       .row.proto-description
         .col-md-12
-          = f.text_field :catchcopy, placeholder: "Catch Copy"
+          = f.text_field :catchcopy, placeholder: "Catch Copy", required: true
         .col-md-12
-          = f.text_area :concept, placeholder: "Concept", cols: "30", rows: "4"
+          = f.text_area :concept, placeholder: "Concept", cols: "30", rows: "4", required: true
         .col-md-12
           %h4 Tag List
           .row
