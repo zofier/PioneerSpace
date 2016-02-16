@@ -19,15 +19,18 @@
         %span.num 20
   .row
     .col-md-9
-      = image_tag("#{@pioneertype.pioneertype_images.main[0].image}", :class => 'img-responsive')
+      = image_tag @pioneertype.pioneertype_images.main[0].image, :class => 'img-responsive'
     .col-md-3
       %ul.proto-sub-list.list-group
-        %li.list-group-item
-          = image_tag("#{@pioneertype.pioneertype_images.sub[0].image}", :class => 'img-responsive')
-        %li.list-group-item
-          = image_tag("#{@pioneertype.pioneertype_images.sub[1].image}", :class => 'img-responsive')
-        %li.list-group-item
-          = image_tag("#{@pioneertype.pioneertype_images.sub[2].image}", :class => 'img-responsive')
+        -if @pioneertype.pioneertype_images.sub[0].try(:image).present?
+          %li.list-group-item
+            = image_tag @pioneertype.pioneertype_images.sub[0].try(:image), :class => 'img-responsive'
+        -if @pioneertype.pioneertype_images.sub[1].try(:image).present?
+          %li.list-group-item
+            = image_tag @pioneertype.pioneertype_images.sub[1].try(:image), :class => 'img-responsive'
+        -if @pioneertype.pioneertype_images.sub[2].try(:image).present?
+          %li.list-group-item
+            = image_tag @pioneertype.pioneertype_images.sub[2].try(:image), :class => 'img-responsive'
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
