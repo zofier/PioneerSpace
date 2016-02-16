@@ -22,4 +22,10 @@ $(function() {
 
     reader.readAsDataURL(file);
   });
+
+  $(function(){
+    $(".image-upload-plus").click(function(){
+          $('.image-upload-plus').hide('span').removeClass('image-upload-plus');
+        });
+  });
 });
