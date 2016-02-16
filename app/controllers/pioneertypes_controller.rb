@@ -1,8 +1,7 @@
 class PioneertypesController < ApplicationController
 
   def index
-    @pioneertypes = Pioneertype.all.page(params[:page]).per(8)
-    # @pioneertype = Pioneertype.find(params[:id])
+    @pioneertypes = Pioneertype.page(params[:page]).per(8)
   end
 
   def new
@@ -16,6 +15,7 @@ class PioneertypesController < ApplicationController
 
   def create
     Pioneertype.create(create_params)
+    redirect_to root_path
   end
 
   private

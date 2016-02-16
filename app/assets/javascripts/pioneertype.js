@@ -1,4 +1,3 @@
-"use strict";
 $(function() {
   // アップロードするファイルを選択
   $('input[type=file]').change(function() {

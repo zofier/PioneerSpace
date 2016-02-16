@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20160212132451) do
   end
 
   create_table "pioneertypes", force: :cascade do |t|
-    t.string   "name",       limit: 255
     t.text     "catchcopy",  limit: 65535
     t.string   "title",      limit: 255
     t.text     "concept",    limit: 65535

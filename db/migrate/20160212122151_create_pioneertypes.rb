@@ -1,7 +1,6 @@
 class CreatePioneertypes < ActiveRecord::Migration
   def change
     create_table :pioneertypes do |t|
-      t.string     :name
       t.text       :catchcopy
       t.string     :title
       t.text       :concept

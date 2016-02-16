@@ -1,0 +1,17 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to pioneertype_path(article) do
+      = image_tag("#{article.pioneertype_images.main[0].try(:image)}")
+    .caption
+      %h3
+        = link_to "#{article.title}", pioneertype_path(article)
+    .proto-meta
+      .proto-user
+        = link_to "by #{article.user.username}", user_path(article.user)
+      .proto-posted
+        = article.created_at.strftime('%b %d')
+    %ul.proto-tag-list.list-inline
+      %li
+        %a{:href => "#", :class => "btn btn-default"} iPad
+      %li
+        %a{:href => "#", :class => "btn btn-default"} wireframe
