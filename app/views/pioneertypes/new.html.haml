@@ -24,7 +24,7 @@
                   = image.file_field :image
                   = image.hidden_field :status, value: "sub"
             %li.list-group-item.col-md-4
-              .image-upload
+              .image-upload#hide_form
                 = f.fields_for :pioneertype_images do |image|
                   = image.file_field :image
                   = image.hidden_field :status, value: "sub"

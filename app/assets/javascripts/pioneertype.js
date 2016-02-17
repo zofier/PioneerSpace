@@ -25,7 +25,8 @@ $(function() {
 
   $(function(){
     $(".image-upload-plus").on("click", function(){
-          $('.image-upload-plus').fadeOut('image-upload-plus');
-        });
+      $(this).fadeOut('image-upload-plus');
+      $('#hide_form').fadeIn('#hide_form')
+    });
   });
 });

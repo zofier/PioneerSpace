@@ -23,9 +23,6 @@
     padding: 0 5px;
 }
 
-.image-upload-plus {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
+#hide_form {
+  display: none;
 }
