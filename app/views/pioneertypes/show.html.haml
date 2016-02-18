@@ -19,18 +19,18 @@
         %span.num 20
   .row
     .col-md-9
-      = image_tag @pioneertype.pioneertype_images.main[0].image, class: 'img-responsive'
+      = image_tag @pioneertype.fetch_main_image(0), class: 'img-responsive'
     .col-md-3
       %ul.proto-sub-list.list-group
-        - if @pioneertype.pioneertype_images.sub[0].try(:image).present?
+        - if @pioneertype.fetch_sub_images(0)
           %li.list-group-item
-            = image_tag @pioneertype.pioneertype_images.sub[0].try(:image), class: 'img-responsive'
-        - if @pioneertype.pioneertype_images.sub[1].try(:image).present?
+            = image_tag @pioneertype.fetch_sub_images(0), class: 'img-responsive'
+        - if @pioneertype.fetch_sub_images(1)
           %li.list-group-item
-            = image_tag @pioneertype.pioneertype_images.sub[1].try(:image), class: 'img-responsive'
-        - if @pioneertype.pioneertype_images.sub[2].try(:image).present?
+            = image_tag @pioneertype.fetch_sub_images(1), class: 'img-responsive'
+        - if @pioneertype.fetch_sub_images(2)
           %li.list-group-item
-            = image_tag @pioneertype.pioneertype_images.sub[2].try(:image), class: 'img-responsive'
+            = image_tag @pioneertype.fetch_sub_images(1), class: 'img-responsive'
   .row.proto-description
     .col-md-3
       %h4 Catch Copy

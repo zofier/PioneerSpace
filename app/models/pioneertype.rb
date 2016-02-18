@@ -8,4 +8,12 @@ class Pioneertype < ActiveRecord::Base
       attributed['image'].blank?
     end
 
+    def fetch_sub_images(num)
+      pioneertype_images.sub[num].try(:image)
+    end
+
+    def fetch_main_image(num)
+      pioneertype_images.main[num].image
+    end
+
 end
