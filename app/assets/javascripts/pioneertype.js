@@ -16,15 +16,15 @@ $(function() {
 
     var reader = new FileReader();
     reader.onload = function() {
-      previewImageTag.css("background-image" , "url(" + reader.result + ")");
-      previewImageTag.css("background-size" , "contain");
+      previewImageTag.css('background-image' , 'url(' + reader.result + ')');
+      previewImageTag.css('background-size' , 'contain');
     }
 
     reader.readAsDataURL(file);
   });
 
   $(function(){
-    $(".image-upload-plus").on("click", function(){
+    $('.image-upload-plus').on('click', function(){
       $(this).hide();
       $('#hide_form').show();
     });
