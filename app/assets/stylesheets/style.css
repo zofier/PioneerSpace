@@ -17,3 +17,12 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.proto-content .proto-tag-list {
+    margin-left: 0;
+    padding: 0 5px;
+}
+
+#hide_form {
+  display: none;
+}

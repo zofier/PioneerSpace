@@ -272,10 +272,9 @@ body {
 
 .jumbotron {
   background-image: image-url("header_bg.png");
-  background-position:  center 92px;
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size:  100% auto;
+  background-size: cover;
   padding: 80px 0;
   margin-bottom: 0;
 }
@@ -292,6 +291,7 @@ body {
   .thumbnail {
     border-radius: 0;
     padding: 0;
+    display: inline-block;
   }
   
   h3 {
@@ -302,7 +302,7 @@ body {
   .proto-meta {
     overflow: hidden;
     font-size: 1.2rem;
-    padding: 10px 0;
+    padding: 10px;
     
     .proto-user {
       float: left;
@@ -455,7 +455,7 @@ body {
     }
     
     .image-upload-plus {
-      height: 200px;
+      height: 100%;
       width: 100%;
       text-align: center;
       
