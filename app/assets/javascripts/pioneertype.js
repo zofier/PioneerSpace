@@ -1,6 +1,6 @@
 $(function() {
   // アップロードするファイルを選択
-  $('input[type=file]').on("change", function() {
+  $('input[type=file]').on('change', function() {
     var file = $(this).prop('files')[0];
 
     // 画像以外は処理を停止
