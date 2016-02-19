@@ -24,9 +24,23 @@ $(function() {
   });
 
   $(function(){
-    $('.image-upload-plus').on('click', function(){
+    $('#plus1').on('click', function(){
       $(this).hide();
-      $('#hide_form').show();
+      $(this).siblings().show();
+      $('#plus2').show();
+    });
+  $(function(){
+    $('#plus2').on('click', function(){
+      $(this).hide();
+      $(this).siblings().show();
+      $('#plus3').show();
+    });
+  $(function(){
+    $('#plus3').on('click', function(){
+      $(this).hide();
+      $(this).siblings().show();
+    });
+    });
     });
   });
 });

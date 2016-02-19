@@ -23,7 +23,7 @@
     padding: 0 5px;
 }
 
-#hide_form {
+#hide_form, #plus2, #plus3{
   display: none;
 }
 
@@ -35,4 +35,10 @@
 
 #hide_back {
   background: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.appear_form {
+    display: block !important;
 }

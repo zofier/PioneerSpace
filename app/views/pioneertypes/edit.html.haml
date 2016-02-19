@@ -7,7 +7,7 @@
             = f.text_field :title, placeholder: "Title", required: true
       .row
         .col-md-12
-          = image_tag @pioneertype.fetch_main_image, class: 'cover-image-upload' do
+          .cover-image-upload{style: "background-image: url(#{@pioneertype.fetch_main_image});"}
             = f.fields_for :pioneertype_images do |image|
               = image.file_field :image, required: true
               = image.hidden_field :status, value: "main"
@@ -15,29 +15,47 @@
           %ul.proto-sub-list.list-group
             - if @pioneertype.fetch_sub_image(0)
               %li.list-group-item.col-md-4
-                = image_tag @pioneertype.fetch_sub_image(0).image, class: 'image-upload' do
+                .image-upload{style: "background-image: url(#{@pioneertype.fetch_sub_image(0).image});",id: 'hide_back'}
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
+                .image-upload-plus#plus1
+                  %span +
+            - else
+              %li.list-group-item.col-md-4
+                .image-upload#hide_form
+                  = f.fields_for :pioneertype_images do |image|
+                    = image.file_field :image
+                    = image.hidden_field :status, value: "sub"
+                .image-upload-plus#plus1
+                  %span +
             - if @pioneertype.fetch_sub_image(1)
               %li.list-group-item.col-md-4
-                = image_tag @pioneertype.fetch_sub_image(1).image, class: 'image-upload' do
-                  = f.fields_for :pioneertype_images do |image|
-                    = image.file_field :image
-                    = image.hidden_field :status, value: "sub"
-            - if @pioneertype.fetch_sub_image(2)
-              %li.list-group-item.col-md-4
-                = image_tag @pioneertype.fetch_sub_image(2).image, class: 'image-upload', id: 'hide_back' do
+                .image-upload{style: "background-image: url(#{@pioneertype.fetch_sub_image(1).image});",id: 'hide_back'}
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
             - else
               %li.list-group-item.col-md-4
-                = image_tag @pioneertype.fetch_sub_image(2).try(:image), class: 'image-upload', id: 'hide_form' do
+                .image-upload#hide_form
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
-                .image-upload-plus
+                .image-upload-plus#plus2
+                  %span +
+            - if @pioneertype.fetch_sub_image(2)
+              %li.list-group-item.col-md-4
+                .image-upload{style: "background-image: url(#{@pioneertype.fetch_sub_image(2).image});",id: 'hide_back'}
+                  = f.fields_for :pioneertype_images do |image|
+                    = image.file_field :image
+                    = image.hidden_field :status, value: "sub"
+            - else
+              %li.list-group-item.col-md-4
+                .image-upload#hide_form
+                  = f.fields_for :pioneertype_images do |image|
+                    = image.file_field :image
+                    = image.hidden_field :status, value: "sub"
+                .image-upload-plus#plus3
                   %span +
       .row.proto-description
         .col-md-12
