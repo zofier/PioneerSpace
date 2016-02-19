@@ -26,3 +26,13 @@
 #hide_form {
   display: none;
 }
+
+#action_dropdown {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+#hide_back {
+  background: none;
+}
