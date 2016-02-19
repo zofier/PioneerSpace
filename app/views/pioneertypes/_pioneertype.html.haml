@@ -1,6 +1,6 @@
 .col-sm-4.col-md-3.proto-content
   .dropdown.drop_menu_location#action_dropdown
-    - if current_user.id == pioneertype.user_id
+    - if current_user.try(:id) == pioneertype.user_id
       %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}Action
       %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
         %li
