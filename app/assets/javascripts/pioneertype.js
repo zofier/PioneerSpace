@@ -12,7 +12,7 @@ $(function() {
     }
 
     // 画像表示
-    var previewImageTag = $(this).parent()
+    var previewImageTag = $(this).parent();
 
     var reader = new FileReader();
     reader.onload = function() {
@@ -23,24 +23,14 @@ $(function() {
     reader.readAsDataURL(file);
   });
 
-  $(function(){
-    $('#plus1').on('click', function(){
-      $(this).hide();
-      $(this).siblings().show();
-      $('#plus2').show();
+
+    $('.image-upload-plus').on('click', function() {
+      var hide_form = $('.hide_form').first();
+      hide_form.show();
+      hide_form.removeClass('hide_form');
+      hide_form.addClass('appear_form');
+      if($('.appear_form').length === 3){     //3枚目の画像まで出したらプラスを消す
+        $('.add_sub_image_form').remove();
+      }
     });
-  $(function(){
-    $('#plus2').on('click', function(){
-      $(this).hide();
-      $(this).siblings().show();
-      $('#plus3').show();
-    });
-  $(function(){
-    $('#plus3').on('click', function(){
-      $(this).hide();
-      $(this).siblings().show();
-    });
-    });
-    });
-  });
 });
