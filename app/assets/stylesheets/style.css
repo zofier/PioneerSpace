@@ -23,10 +23,6 @@
     padding: 0 5px;
 }
 
-#hide_form, #plus2, #plus3{
-  display: none;
-}
-
 #action_dropdown {
   position: absolute;
   top: 10px;
@@ -40,5 +36,13 @@
 }
 
 .appear_form {
-    display: block !important;
+  display: block;
+}
+
+div > ul > .hide_form {
+  display: none;
+}
+
+li {
+  list-style: none;
 }
