@@ -4,7 +4,7 @@
       %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}Action
       %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
         %li
-          = link_to 'Delete', "/pioneertypes/#{pioneertype.id}", method: :delete, rel: "nofollow"
+          = link_to 'Delete', pioneertype_path(pioneertype), method: :delete, rel: "nofollow"
         %li
           = link_to 'Edit', edit_pioneertype_path(pioneertype)
   .thumbnail
