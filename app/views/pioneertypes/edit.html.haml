@@ -4,15 +4,15 @@
       %header.row.user-nav.row
         .col-md-12
           .proto-new-title
-            = f.text_field :title, placeholder: "Title", required: true
+            = f.text_field :title, placeholder: "Title", required:true
       .row
         .col-md-12
-          .cover-image-upload{style: "background-image: url(#{@pioneertype.fetch_main_image});"}
+          .cover-image-upload{style: "background-image: url(#{@pioneertype.fetch_main_image});",id: 'hide_back'}
             = f.fields_for :pioneertype_images do |image|
-              = image.file_field :image, required: true
+              = image.file_field :image
               = image.hidden_field :status, value: "main"
         .col-md-12
-          %ul.proto-sub-list.list-group{stle: 'list-style:none;'}
+          %ul.proto-sub-list.list-group
             - if @pioneertype.fetch_sub_image(0)
               %li.list-group-item.col-md-4.appear_form
                 .image-upload{style: "background-image: url(#{@pioneertype.fetch_sub_image(0).image});",id: 'hide_back'}
@@ -20,7 +20,7 @@
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
             - else
-              %li.list-group-item.col-md-4.hide_form
+              %li.list-group-item.col-md-4#hide_form
                 .image-upload
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
@@ -32,7 +32,7 @@
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
             - else
-              %li.list-group-item.col-md-4.hide_form
+              %li.list-group-item.col-md-4#hide_form
                 .image-upload
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
@@ -44,7 +44,7 @@
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
             - else
-              %li.list-group-item.col-md-4.hide_form
+              %li.list-group-item.col-md-4#hide_form
                 .image-upload
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
@@ -54,9 +54,9 @@
                   %span +
       .row.proto-description
         .col-md-12
-          = f.text_field :catchcopy, placeholder: "Catch Copy", required: true
+          = f.text_field :catchcopy, placeholder: "Catch Copy", required:true
         .col-md-12
-          = f.text_area :concept, placeholder: "Concept", cols: "30", rows: "4", required: true
+          = f.text_area :concept, placeholder: "Concept", cols: "30", rows: "4", required:true
         .col-md-12
           %h4 Tag List
           .row
