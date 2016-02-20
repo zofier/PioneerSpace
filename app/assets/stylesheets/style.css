@@ -33,13 +33,14 @@
   background: none;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center center;
 }
 
 .appear_form {
   display: block;
 }
 
-div > ul > .hide_form {
+#hide_form {
   display: none;
 }
 
