@@ -1,5 +1,5 @@
 class PioneertypesController < ApplicationController
-before_action :set_pioneertype, only: [:destroy, :edit, :show]
+before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
 
   def index
     @pioneertypes = Pioneertype.page(params[:page]).per(8)
@@ -22,7 +22,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show]
   end
 
   def update
-    current_user.pioneertype.update(pioneertype_params)
+    @pioneertype.update(pioneertype_params)
     redirect_to root_path
   end
 
