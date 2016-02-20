@@ -12,50 +12,45 @@
               = image.file_field :image, required: true
               = image.hidden_field :status, value: "main"
         .col-md-12
-          %ul.proto-sub-list.list-group
+          %ul.proto-sub-list.list-group{stle: 'list-style:none;'}
             - if @pioneertype.fetch_sub_image(0)
-              %li.list-group-item.col-md-4
+              %li.list-group-item.col-md-4.appear_form
                 .image-upload{style: "background-image: url(#{@pioneertype.fetch_sub_image(0).image});",id: 'hide_back'}
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
-                .image-upload-plus#plus1
-                  %span +
             - else
-              %li.list-group-item.col-md-4
-                .image-upload#hide_form
+              %li.list-group-item.col-md-4.hide_form
+                .image-upload
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
-                .image-upload-plus#plus1
-                  %span +
             - if @pioneertype.fetch_sub_image(1)
-              %li.list-group-item.col-md-4
+              %li.list-group-item.col-md-4.appear_form
                 .image-upload{style: "background-image: url(#{@pioneertype.fetch_sub_image(1).image});",id: 'hide_back'}
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
             - else
-              %li.list-group-item.col-md-4
-                .image-upload#hide_form
+              %li.list-group-item.col-md-4.hide_form
+                .image-upload
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
-                .image-upload-plus#plus2
-                  %span +
             - if @pioneertype.fetch_sub_image(2)
-              %li.list-group-item.col-md-4
+              %li.list-group-item.col-md-4.appear_form
                 .image-upload{style: "background-image: url(#{@pioneertype.fetch_sub_image(2).image});",id: 'hide_back'}
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
             - else
-              %li.list-group-item.col-md-4
-                .image-upload#hide_form
+              %li.list-group-item.col-md-4.hide_form
+                .image-upload
                   = f.fields_for :pioneertype_images do |image|
                     = image.file_field :image
                     = image.hidden_field :status, value: "sub"
-                .image-upload-plus#plus3
+              %li.list-group-item.col-md-4.add_sub_image_form
+                .image-upload-plus
                   %span +
       .row.proto-description
         .col-md-12
