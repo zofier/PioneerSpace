@@ -25,10 +25,10 @@ $(function() {
 
 
     $('.image-upload-plus').on('click', function() {
-      var hide_form = $('#hide_form').first();
-      hide_form.removeAttr('id', 'hide_form');
-      hide_form.addClass('appear_form');
-      if($('.appear_form').length === 3){     //3枚目の画像まで出したらプラスを消す
+      var hide = $('.hide').first();
+      hide.removeClass('hide');
+      hide.addClass('appear');
+      if($('.appear').length === 3){     // 3枚目の画像まで出したらプラスを消す
         $('.add_sub_image_form').remove();
       }
     });
