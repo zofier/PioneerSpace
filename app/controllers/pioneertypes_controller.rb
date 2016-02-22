@@ -19,6 +19,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
   end
 
   def edit
+    @pioneertype.pioneertype_images.new
   end
 
   def update
