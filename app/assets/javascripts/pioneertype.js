@@ -24,12 +24,11 @@ $(function() {
   });
 
 
-    $('.image-upload-plus').on('click', function() {
-      var hide = $('.hide').first();
-      hide.removeClass('hide');
-      hide.addClass('appear');
-      if($('.appear').length === 3){     // 3枚目の画像まで出したらプラスを消す
-        $('.add_sub_image_form').remove();
-      }
-    });
+  $('.image-upload-plus').on('click', function() {
+    var hide = $('.hide').first();
+    hide.removeClass('hide');
+    hide.addClass('appear');
+    if($('.appear').length === 3){     // 3枚目の画像まで出したらプラスを消す
+      $('.add_sub_image_form').remove();
+  }});
 });
