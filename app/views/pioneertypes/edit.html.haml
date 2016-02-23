@@ -7,13 +7,13 @@
             = f.text_field :title, placeholder: "Title", required:true
       .row
         .col-md-12
-          .cover-image-upload.background_contain{style: "background-image: url(#{@pioneertype.fetch_main_image.image});",}
+          .cover-image-upload.background_main_contain{style: "background-image: url(#{@pioneertype.fetch_main_image.image});",}
             = f.fields_for :pioneertype_images, @pioneertype.fetch_main_image do |image|
               = image.file_field :image
               = image.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
-            = render partial: "pioneertypes/pioneertype_image", locals: {f: f}
+            = render partial: "pioneertypes/pioneertype_image", collection: (0..2).to_a, as: :num, locals: {f: f}
 
       .row.proto-description
         .col-md-12
