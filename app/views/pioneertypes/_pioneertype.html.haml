@@ -9,7 +9,7 @@
           = link_to 'Edit', edit_pioneertype_path(pioneertype)
   .thumbnail
     = link_to pioneertype_path(pioneertype) do
-      = image_tag pioneertype.fetch_main_image
+      = image_tag pioneertype.fetch_main_image.image
     .caption
       %h3
         = link_to pioneertype.title, pioneertype_path(pioneertype)

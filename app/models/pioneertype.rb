@@ -13,7 +13,6 @@ class Pioneertype < ActiveRecord::Base
     end
 
     def fetch_main_image
-      pioneertype_images.main[0].image
+      pioneertype_images.main[0]
     end
-
 end
