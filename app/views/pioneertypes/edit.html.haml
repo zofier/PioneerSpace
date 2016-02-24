@@ -13,7 +13,11 @@
               = image.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
-            = render partial: "pioneertypes/pioneertype_image", collection: (0..2).to_a, as: :num, locals: {f: f}
+            - 3.times do |i|
+              = render partial: "pioneertypes/pioneertype_image", locals: {f: f, i: i}
+            %li.list-group-item.col-md-4.add_sub_image_form
+              .image-upload-plus
+                %span +
 
       .row.proto-description
         .col-md-12
