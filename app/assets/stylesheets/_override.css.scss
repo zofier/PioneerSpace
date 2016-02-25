@@ -1,0 +1,46 @@
+.navbar-btn {
+  color: #fff;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.user-image {
+  float: right;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.proto-content .proto-tag-list {
+  margin-left: 0;
+  padding: 0 5px;
+}
+
+.action_dropdown {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.appear {
+  display: block;
+}
+
+li {
+  list-style: none;
+}
+
+.hide {
+  display: none;
+}
+
+.add_sub_image_form {
+  height: 220px;
+}
+
+.proto-new .cover-image-upload.background_main_contain{
+  background-size: contain;
+}
+
+.proto-sub-list .list-group-item .image-upload.background_sub_contain{
+  background-size: contain;
+}
