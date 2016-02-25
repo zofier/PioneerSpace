@@ -1,12 +1,12 @@
-- if @pioneertype.fetch_sub_image(i)
+- if pioneertype_image
   %li.list-group-item.col-md-4.appear
-    .image-upload.background_sub_contain{style: "background-image: url(#{@pioneertype.fetch_sub_image(i).image});"}
-      = f.fields_for :pioneertype_images, @pioneertype.fetch_sub_image(i) do |image|
+    .image-upload.background_sub_contain{style: "background-image: url(#{pioneertype_image.image});"}
+      = f.fields_for :pioneertype_images, pioneertype_image do |image|
         = image.file_field :image
         = image.hidden_field :status, value: "sub"
 - else
-  %li.list-group-item.col-md-4.hide
+  %li.list-group-item.col-md-4.appear
     .image-upload
-      = f.fields_for :pioneertype_images, @pioneertype.fetch_sub_image(i) do |image|
+      = f.fields_for :pioneertype_images, pioneertype_image do |image|
         = image.file_field :image
         = image.hidden_field :status, value: "sub"
