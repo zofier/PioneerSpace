@@ -23,7 +23,6 @@ $(function() {
     reader.readAsDataURL(file);
   });
 
-
   $('.image-upload-plus').on('click', function() {
     var hide = $('.hide').first();
     hide.removeClass('hide');
