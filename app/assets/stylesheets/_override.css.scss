@@ -4,10 +4,6 @@
   padding-bottom: 8px;
 }
 
-.navbar-btn:hover {
-  color: #fff;
-}
-
 .user-image {
   float: right;
   background-repeat: no-repeat;
@@ -42,5 +38,9 @@ li {
 }
 
 .proto-new .cover-image-upload.background_main_contain{
+  background-size: contain;
+}
+
+.proto-sub-list .list-group-item .image-upload.background_sub_contain{
   background-size: contain;
 }
