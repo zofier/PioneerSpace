@@ -13,7 +13,30 @@
               = image.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
-            = render partial: "pioneertypes/pioneertype_image", collection: @pioneertype_images, locals: {f: f}
+            - if @pioneertype.fetch_sub_image(0)
+              %li.list-group-item.col-md-4.appear
+                .image-upload.background_sub_contain{style: "background-image: url(#{@pioneertype.fetch_sub_image(0).image});"}
+                  = f.fields_for :pioneertype_images, @pioneertype.fetch_sub_image(0) do |image|
+                    = image.file_field :image
+                    = image.hidden_field :status, value: "sub"
+            - else
+              %li.list-group-item.col-md-4.appear
+                .image-upload
+                  = f.fields_for :pioneertype_images, @pioneertype.fetch_sub_image(0) do |image|
+                    = image.file_field :image
+                    = image.hidden_field :status, value: "sub"
+            - if @pioneertype.fetch_sub_image(1)
+              %li.list-group-item.col-md-4.appear
+                .image-upload.background_sub_contain{style: "background-image: url(#{@pioneertype.fetch_sub_image(1).image});"}
+                  = f.fields_for :pioneertype_images, @pioneertype.fetch_sub_image(1) do |image|
+                    = image.file_field :image
+                    = image.hidden_field :status, value: "sub"
+            - else
+              %li.list-group-item.col-md-4.appear
+                .image-upload
+                  = f.fields_for :pioneertype_images, @pioneertype.fetch_sub_image(1) do |image|
+                    = image.file_field :image
+                    = image.hidden_field :status, value: "sub"
             - if @pioneertype.fetch_sub_image(2)
               %li.list-group-item.col-md-4.appear
                 .image-upload.background_sub_contain{style: "background-image: url(#{@pioneertype.fetch_sub_image(2).image});"}
