@@ -1,6 +1,5 @@
 class PioneertypesController < ApplicationController
 before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
-before_action :set_pioneertype_sub_image, only: :edit
 
   def index
     @pioneertypes = Pioneertype.page(params[:page]).per(8)
@@ -40,12 +39,5 @@ before_action :set_pioneertype_sub_image, only: :edit
 
   def set_pioneertype
     @pioneertype = Pioneertype.find(params[:id])
-  end
-
-  def set_pioneertype_sub_image
-    @pioneertype_images = []
-    2.times do |i|
-      @pioneertype_images << @pioneertype.pioneertype_images.sub[i]
-    end
   end
 end
