@@ -23,7 +23,7 @@
               %span.caret
             %ul.dropdown-menu{role: "menu"}
               %li
-                %a{href: "#"} My page
+                = link_to "My Page", user_path(current_user)
               %li
                 = link_to "Profile Edit", edit_user_registration_path(current_user)
               %li
