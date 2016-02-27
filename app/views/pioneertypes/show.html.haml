@@ -4,7 +4,7 @@
       .media
         .media-left
           = link_to user_path(@pioneertype.user) do
-            %img.media-object{alt: "64x64", data:{holder:{rendered: true}, src: "holder.js/64x64"}, src: "#{@pioneertype.user.avatar}"}/
+            %img.media-object{alt: "64x64", data: {holder: {rendered: true}, src: "holder.js/64x64"}, src: @pioneertype.user.avatar}/
         .media-body
           %h4#top-aligned-media.media-heading
             = @pioneertype.title
