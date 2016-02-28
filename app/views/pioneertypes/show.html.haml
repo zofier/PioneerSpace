@@ -48,7 +48,7 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (#{@pioneertype.comments.count})
+      %span.num#comment_sum (#{@pioneertype.comments.count})
     .col-md-8
       #comments
         = render partial: 'pioneertypes/comment', collection: @pioneertype.comments
@@ -59,4 +59,4 @@
             .form-group.col-md-10
               = f.text_area :text, id: "comment_field", placeholder: "Your comments", rows: "3", required: true
             .form-group.col-md-2
-              = f.submit :comment, class: "btn btn-primary"
+              = f.submit :comment, class: "btn btn-primary", id: "comment_count"
