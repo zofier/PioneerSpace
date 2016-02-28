@@ -3,6 +3,6 @@ $('#comments').html(
   '<%= j(render partial: 'pioneertypes/comment', collection: @pioneertype.comments) %>'
 );
 
-$('#comment_sum').html(
+$('#comment_sum').text(
   '<%= j("(#{@pioneertype.comments.count})") %>'
 );
