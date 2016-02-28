@@ -11,6 +11,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
   end
 
   def show
+    @comment = Comment.new
   end
 
   def create

@@ -37,15 +37,25 @@ li {
   height: 220px;
 }
 
-.proto-new .cover-image-upload.background_main_contain{
+.proto-new .cover-image-upload.background_main_contain {
   background-size: contain;
 }
 
-.proto-sub-list .list-group-item .image-upload.background_sub_contain{
+.proto-sub-list .list-group-item .image-upload.background_sub_contain {
   background-size: contain;
 }
 
 .media-object {
   width: 64px;
   height: 64px;
+}
+
+.new_comment .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.form-group {
+  min-width: 212px
 }

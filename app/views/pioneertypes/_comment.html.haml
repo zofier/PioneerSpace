@@ -1,0 +1,10 @@
+.media
+  .media-left.media-middle
+    = link_to user_path(comment) do
+      %img.media-object{alt: "64x64", data: {holder: {rendered: true}, src: "holder.js/64x64"}, src: comment.user.avatar}/
+  .media-body
+    %h4#middle-aligned-media.media-heading
+      = comment.user.username
+      %a.anchorjs-link{href: "#middle-aligned-media"}
+        %span.anchorjs-icon
+    %p= comment.text
