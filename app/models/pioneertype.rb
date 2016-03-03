@@ -2,6 +2,7 @@ class Pioneertype < ActiveRecord::Base
 
   has_many :pioneertype_images
   has_many :comments
+  has_many :likes, dependent: :destroy
   belongs_to :user
   accepts_nested_attributes_for :pioneertype_images, reject_if: :image_blank?
 
@@ -15,5 +16,9 @@ class Pioneertype < ActiveRecord::Base
 
     def fetch_main_image
       pioneertype_images.main[0]
+    end
+
+    def like_user(user_id, pioneertype_id)
+      likes.find_by(user_id: user_id, pioneertype_id: pioneertype_id)
     end
 end
