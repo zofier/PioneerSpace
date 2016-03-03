@@ -12,10 +12,12 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
 
   def show
     @comment = Comment.new
+    @likes = Like.where(pioneertype_id: params[:id])
+    @like = @pioneertype.like_user(current_user.id, params[:id])
   end
 
   def create
-    Pioneertype.create(pioneertype_params)
+    current_user.pioneertypes.create(pioneertype_params)
     redirect_to root_path
   end
 
@@ -24,7 +26,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
   end
 
   def update
-    @pioneertype.update(pioneertype_params)
+    current_user.pioneertypes.update(pioneertype_params)
     redirect_to root_path
   end
 
@@ -35,7 +37,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
 
   private
   def pioneertype_params
-    params.require(:pioneertype).permit(:title, :concept, :catchcopy, pioneertype_images_attributes: [:id, :image, :status, :pioneertype_id]).merge(user_id: current_user.id)
+    params.require(:pioneertype).permit(:title, :concept, :catchcopy, pioneertype_images_attributes: [:id, :image, :status, :pioneertype_id])
   end
 
   def set_pioneertype
