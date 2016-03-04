@@ -1,17 +1,12 @@
-- if user_signed_in?
-  -if pioneertype.likes.find_by(user_id: current_user.id)
-    = button_to pioneertype_like_path(pioneertype.id, like.id), method: :delete, class: "btn btn-default btn-like", remote: true do
-      = image_tag("icon_red_heart.svg")
-      %span.num
-        LIKE
-        = pioneertype.likes_count
-  - else
-    = button_to pioneertype_likes_path(pioneertype), remote: true, class: "btn btn-default btn-like" do
-      = image_tag("icon_heart.svg")
-      %span.num
-        LIKE
-        = pioneertype.likes_count
+-if like
+  = button_to pioneertype_like_path(pioneertype.id, like.id), method: :delete, class: "btn btn-default btn-like", remote: true do
+    = image_tag("icon_red_heart.svg")
+    %span.num
+      LIKE
+      = pioneertype.likes_count
 - else
-  = image_tag("icon_heart.svg")
-  %span.num
-    = pioneertype.likes_count
+  = button_to pioneertype_likes_path(pioneertype), remote: true, class: "btn btn-default btn-like" do
+    = image_tag("icon_heart.svg")
+    %span.num
+      LIKE
+      = pioneertype.likes_count
