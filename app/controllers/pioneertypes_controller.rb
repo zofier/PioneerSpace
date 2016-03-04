@@ -13,7 +13,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
   def show
     @comment = Comment.new
     @likes = Like.where(pioneertype_id: params[:id])
-    @like = @pioneertype.like_user(current_user.id, params[:id])
+    @like = @pioneertype.likes.find_by(current_user.try(:id))
   end
 
   def create
