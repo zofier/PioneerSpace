@@ -26,7 +26,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
   end
 
   def update
-    current_user.pioneertypes.update(pioneertype_params)
+    @pioneertype.update(pioneertype_params)
     redirect_to root_path
   end
 
