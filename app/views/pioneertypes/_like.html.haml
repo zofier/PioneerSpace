@@ -5,7 +5,7 @@
       LIKE
       = pioneertype.likes_count
 - else
-  = button_to pioneertype_likes_path(pioneertype), remote: true, class: "btn btn-default btn-like" do
+  = button_to pioneertype_likes_path(pioneertype), class: "btn btn-default btn-like", remote: true do
     = image_tag("icon_heart.svg")
     %span.num
       LIKE
