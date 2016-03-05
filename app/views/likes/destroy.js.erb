@@ -1,2 +1,2 @@
 $("#like-button").html(
-  "<%= j(render partial: 'pioneertypes/like', locals: { pioneertype: @pioneertype, like: @like}) %>");
+  "<%= j(render partial: 'pioneertypes/create_heart', locals: { pioneertype: @pioneertype, like: nil }) %>");
