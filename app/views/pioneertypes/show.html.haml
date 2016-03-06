@@ -15,9 +15,9 @@
     - if user_signed_in?
       .col-md-6.text-right#like-button
         - if @like
-          = render partial: 'destroy_heart', locals: { pioneertype: @pioneertype, like: @like }
+          = render partial: 'highlighted_like_button', locals: { pioneertype: @pioneertype, like: @like }
         - else
-          = render partial: 'create_heart', locals: { pioneertype: @pioneertype, like: @like }
+          = render partial: 'like_button', locals: { pioneertype: @pioneertype, like: @like }
   .row
     .col-md-9
       = image_tag @pioneertype.fetch_main_image.image, class: 'img-responsive'
