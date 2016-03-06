@@ -12,11 +12,12 @@
             = link_to "by #{@pioneertype.user.username}", user_path(@pioneertype.user)
             %span.degree #{@pioneertype.user.group} #{@pioneertype.user.work}
 
-    .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+    - if user_signed_in?
+      .col-md-6.text-right#like-button
+        - if @like
+          = render partial: 'highlighted_like_button', locals: { pioneertype: @pioneertype, like: @like }
+        - else
+          = render partial: 'unlighted_like_button', locals: { pioneertype: @pioneertype }
   .row
     .col-md-9
       = image_tag @pioneertype.fetch_main_image.image, class: 'img-responsive'
