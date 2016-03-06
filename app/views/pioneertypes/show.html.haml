@@ -17,7 +17,7 @@
         - if @like
           = render partial: 'highlighted_like_button', locals: { pioneertype: @pioneertype, like: @like }
         - else
-          = render partial: 'like_button', locals: { pioneertype: @pioneertype, like: @like }
+          = render partial: 'unlighted_like_button', locals: { pioneertype: @pioneertype }
   .row
     .col-md-9
       = image_tag @pioneertype.fetch_main_image.image, class: 'img-responsive'
