@@ -33,16 +33,6 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
     redirect_to root_path
   end
 
-  def newest
-    @pioneertypes = Pioneertype.page(params[:page]).per(8).order('created_at DESC')
-    render :template => "pioneertypes/index"
-  end
-
-  def popular
-    @pioneertypes = Pioneertype.page(params[:page]).per(8).order('likes_count DESC')
-    render :template => "pioneertypes/index"
-  end
-
   private
   def pioneertype_params
     params.require(:pioneertype).permit(:title, :concept, :catchcopy, pioneertype_images_attributes: [:id, :image, :status, :pioneertype_id]).merge(user_id: current_user.id)
