@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   root 'pioneertypes#index'
+  resources :tags, param: :tag_name, only: [:index, :show]
 end
