@@ -62,10 +62,11 @@
           %h4 Tag List
           .row
             .col-md-3
-              %input{type: "text", placeholder: "Web Design"}/
+              = text_field_tag "tags[]", @pioneertype.tag_list.first, id: "pioneertype_tag_list", placeholder: "Web Design"
             .col-md-3
-              %input{type: "text", placeholder: "UI"}/
+              = text_field_tag "tags[]", @pioneertype.tag_list.second, id: "pioneertype_tag_list", placeholder: "UI"
             .col-md-3
-              %input{type: "text", placeholder: "Application"}/
+              = text_field_tag "tags[]", @pioneertype.tag_list.third, id: "pioneertype_tag_list", placeholder: "Application"
+
       .row.text-center.proto-btn
         = f.submit "Publish", class: 'btn btn-lg btn-primary btn-block'
