@@ -39,5 +39,5 @@ test:
 production:
   <<: *default
   database: PioneerSpace_production
-  username: PioneerSpace
+  username: root
   password: <%= ENV['PIONEERSPACE_DATABASE_PASSWORD'] %>
