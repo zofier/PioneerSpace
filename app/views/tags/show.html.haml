@@ -5,7 +5,7 @@
       .thumbnail
         = link_to @tag, tag_path(@tag), style: "width: 100%; height: 50px; font-size: 2rem; font-weight: 300; padding-bottom: 3px; color: #999; background-color: #eee;", class: "btn btn-tag"
         .tag-meta
-          = link_to "#{@tags.taggings_count} Projects", tag_path(@tag), style: "display: block; font-size: 1.3rem; border-radius: 2px; margin: 0 -2px 2px;", class: "label label-default tag-list-number"
+          = link_to "#{@tag.taggings_count} Projects", tag_path(@tag), style: "display: block; font-size: 1.3rem; border-radius: 2px; margin: 0 -2px 2px;", class: "label label-default tag-list-number"
     = render partial: 'pioneertypes/pioneertype', collection: @pioneertypes
 .text-center
   = paginate @pioneertypes
