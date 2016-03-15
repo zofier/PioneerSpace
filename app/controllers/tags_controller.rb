@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = ActsAsTaggableOn::Tag.most_used
+    @tags = ActsAsTaggableOn::Tag.order('id DESC')
   end
 
   def show
