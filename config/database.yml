@@ -6,6 +6,12 @@ default: &default
   password:
   socket: /tmp/mysql.sock
 
+production:
+  <<: *default
+  database: PioneerSpace_production
+  username: root
+  password: <%= ENV['PIONEERSPACE_DATABASE_PASSWORD'] %>
+
 development:
   <<: *default
   database: PioneerSpace_development
@@ -36,8 +42,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: PioneerSpace_production
-  username: PioneerSpace
-  password: <%= ENV['PIONEERSPACE_DATABASE_PASSWORD'] %>
