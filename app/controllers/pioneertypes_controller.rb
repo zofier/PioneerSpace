@@ -2,7 +2,7 @@ class PioneertypesController < ApplicationController
 before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
 
   def index
-    @pioneertypes = Pioneertype.page(params[:page]).per(8).order('likes_count DESC')
+    @pioneertypes = Pioneertype.order('likes_count DESC').page(params[:page]).per(8)
   end
 
   def new
