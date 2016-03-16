@@ -5,6 +5,7 @@ class Pioneertype < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   belongs_to :user
   accepts_nested_attributes_for :pioneertype_images, reject_if: :image_blank?
+  acts_as_taggable
 
     def image_blank?(attributed)
       attributed['image'].blank?

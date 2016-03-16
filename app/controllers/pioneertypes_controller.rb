@@ -2,7 +2,7 @@ class PioneertypesController < ApplicationController
 before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
 
   def index
-    @pioneertypes = Pioneertype.page(params[:page]).per(8)
+    @pioneertypes = Pioneertype.order('likes_count DESC').page(params[:page]).per(8)
   end
 
   def new
@@ -36,7 +36,7 @@ before_action :set_pioneertype, only: [:destroy, :edit, :show, :update]
 
   private
   def pioneertype_params
-    params.require(:pioneertype).permit(:title, :concept, :catchcopy, pioneertype_images_attributes: [:id, :image, :status, :pioneertype_id])
+    params.require(:pioneertype).permit(:title, :concept, :catchcopy, pioneertype_images_attributes: [:id, :image, :status, :pioneertype_id]).merge(tag_list: params[:tags])
   end
 
   def set_pioneertype

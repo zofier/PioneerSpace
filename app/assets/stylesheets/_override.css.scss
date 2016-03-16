@@ -63,3 +63,24 @@ li {
 .btn-index:hover {
     color: #337ab7;
   }
+
+.row .proto-content .thumbnail {
+  display: block;
+}
+
+.thumbnail .btn.btn-tag {
+  width: 100%;
+  height: 50px;
+  font-size: 2rem;
+  font-weight: 300;
+  padding-bottom: 3px;
+  color: #999;
+  background-color: #eee;
+}
+
+.tag-list-number {
+  display: block;
+  font-size: 1.3rem;
+  border-radius: 2px;
+  margin: 0 -2px 2px;
+}

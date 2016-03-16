@@ -19,7 +19,7 @@
       .proto-posted
         = pioneertype.created_at.strftime('%b %d')
     %ul.proto-tag-list.list-inline
-      %li
-        %a{href: "#", class: "btn btn-default"} iPad
-      %li
-        %a{href: "#", class: "btn btn-default"} wireframe
+      - pioneertype.tag_list.each do |tag|
+        %li
+          = link_to tag, tag_path(tag), class: 'btn btn-default'
+

@@ -1,0 +1,5 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to tag.name, tag_path(tag.name), class: "btn btn-tag"
+    .tag-meta
+      = link_to "#{tag.taggings_count} Projects", tag_path(tag.name), class: "label label-default tag-list-number"
