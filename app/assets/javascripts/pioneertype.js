@@ -39,7 +39,7 @@ $(function() {
 
   var $container = $('.proto-list');
   // 全ての画像が読み込まれてから Masonry を初期化（イニシャライズ）
-    $container.imagesLoaded( function() {
-      $container.masonry();
-    });
+  $container.imagesLoaded( function() {
+    $container.masonry();
+  });
 });
