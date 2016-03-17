@@ -1,11 +1,13 @@
 = render 'pioneertypes/second_header'
-.container.proto-list
+.container
   .row
     .col-sm-12.proto-content
       .thumbnail
         = link_to @tag, tag_path, class: "btn btn-tag"
         .tag-meta
           = link_to "#{@tag.taggings_count} Projects", tag_path, class: "label label-default tag-list-number"
+.container.proto-list
+  .row
     = render partial: 'pioneertypes/pioneertype', collection: @pioneertypes
 .text-center
   = paginate @pioneertypes

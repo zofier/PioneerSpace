@@ -27,7 +27,19 @@ $(function() {
     var hide = $('.hide').first();
     hide.removeClass('hide');
     hide.addClass('appear');
-    if($('.appear').length === 3){     // 3枚目の画像まで出したらプラスを消す
+    if($('.appear').length === 3){
       $('.add_sub_image_form').remove();
   }});
+
+  $('.proto-list').masonry({
+    itemSelector: '.masonry-brick',
+    columnWidth: 290,
+    isFitWidth: true
+  });
+
+  var $container = $('.proto-list');
+  // 全ての画像が読み込まれてから Masonry を初期化（イニシャライズ）
+  $container.imagesLoaded( function() {
+    $container.masonry();
+  });
 });

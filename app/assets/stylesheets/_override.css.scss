@@ -84,3 +84,19 @@ li {
   border-radius: 2px;
   margin: 0 -2px 2px;
 }
+
+.proto-list {
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.item {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.col3 {
+  width: 280px;
+}
