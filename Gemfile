@@ -52,4 +52,5 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-gem 'sprockets'
+gem 'therubyracer', platforms: :ruby
+
