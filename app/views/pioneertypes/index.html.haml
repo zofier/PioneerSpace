@@ -1,20 +1,7 @@
-.jumbotron
-  .container.text-center
-    = image_tag("header_logo5.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "134px")
-
-.filter-nav
-  .container
-    .row
-      %ul.nav.nav-pills.col-lg-11
-        %li.active{role: "presentation"}
-          %a{href: "#"} Popular PROTO
-        %li{role: "presentation"}
-          %a{href: "#"} Newest PROTO
-      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
-
+= render 'pioneertypes/second_header'
 .container.proto-list
   .row
     = render partial: "pioneertypes/pioneertype", collection: @pioneertypes
 
-  .text-center
-    = paginate(@pioneertypes)
+.text-center
+  = paginate(@pioneertypes)

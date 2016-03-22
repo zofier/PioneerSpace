@@ -1,4 +1,4 @@
-.col-sm-4.col-md-3.proto-content
+.col3.proto-content.masonry-brick
   .dropdown.drop_menu_location.action_dropdown
     - if current_user.try(:id) == pioneertype.user_id
       %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}Action
@@ -19,7 +19,7 @@
       .proto-posted
         = pioneertype.created_at.strftime('%b %d')
     %ul.proto-tag-list.list-inline
-      %li
-        %a{href: "#", class: "btn btn-default"} iPad
-      %li
-        %a{href: "#", class: "btn btn-default"} wireframe
+      - pioneertype.tag_list.each do |tag|
+        %li
+          = link_to tag, tag_path(tag), class: 'btn btn-default'
+
