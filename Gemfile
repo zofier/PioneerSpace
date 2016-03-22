@@ -56,5 +56,7 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+gem 'therubyracer', platforms: :ruby
 gem 'acts-as-taggable-on', '~>3.4'
 gem 'fog'
+
