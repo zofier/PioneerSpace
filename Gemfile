@@ -44,6 +44,10 @@ group :development do
   gem 'pry-rails'
 end
 
+group :production, :staging do
+    gem 'unicorn'
+end
+
 gem 'bootstrap-sass'
 gem 'erb2haml'
 gem 'devise'
